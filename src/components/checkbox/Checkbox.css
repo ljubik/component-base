@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  /* ім'я шрифта */
+  /* font-family: Poppins;  */
+  src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); /* шлях до файлу шрифта */
+}
+
+.checkbox {
+  margin-bottom: 1em;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 19px;
+}
+
+.chek-base {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  border: 2px solid rgb(213, 213, 213);
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chek-base + label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.chek-base + label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 2px solid rgb(213, 213, 213);
+  border-radius: 0.25em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+.check-lbl {
+  margin-left: 0.5em;
+}
+
+.chek-base:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #c2cfe0;
+}
+
+.chek-base:not(:disabled):active + label::before {
+  border-color: #c2cfe0;
+}
+
+.chek-base:checked + label::before {
+  border: 2px solid #c2cfe0;
+  background-image: url("img/chek-ok-gray.png");
+}
+
+.chek-base:disabled + label::before {
+  border: 2px solid #c2cfe0;
+  cursor: not-allowed;
+}
+
+.chek-main:checked + label::before {
+  border-color: #109cf1;
+  background: #109cf1;
+  background-image: url("img/chek-ok-white.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chek-main:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #109cf1;
+}
+
+.chek-success:checked + label::before {
+  border: 2px solid #2ed47a;
+  border-color: #2ed47a;
+  background-image: url("img/chek-ok-green.png");
+}
+.chek-success:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #2ed47a;
+}
